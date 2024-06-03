@@ -8,10 +8,13 @@ const LoginScreen = ({ navigation }) => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleLogin = () => {
+
     if (email !== global.signupEmail || password !== global.signupPassword) {
       setErrorMessage('Invalid email or password Please SignUp!');
       return;
     }
+    navigation.navigate('Health');
+
 
     console.log('Logging in with:', email, password);
     navigation.navigate('Location');
